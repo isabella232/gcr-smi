@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// Field is an entry in the SMI, consisting of GUIDs and a multiplier
 type Field struct {
 	Agent      string
 	Component  string
@@ -15,6 +16,7 @@ type Field struct {
 	SubService string
 }
 
+// Update will update the given field in the SMI
 func Update(f Field, url, authkey string) error {
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(f); err != nil {

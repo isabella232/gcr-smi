@@ -41,6 +41,7 @@ func (j *jsonpbObjectMarshaler) MarshalJSON() ([]byte, error) {
 	return b.Bytes(), nil
 }
 
+// FindImage returns a list of images for a given repo root, matching the specified tag
 func FindImage(root, project, tag string) ([]string, error) {
 	repoName := fmt.Sprintf("%s/%s", root, project)
 	repo, err := name.NewRepository(repoName)
@@ -76,6 +77,7 @@ func FindImage(root, project, tag string) ([]string, error) {
 	return out, nil
 }
 
+// ListVulns returns an iterator to all the vulnerabilities matching a particular image
 func ListVulns(project, image string) (*containeranalysis.OccurrenceIterator, error) {
 	ctx := context.Background()
 	client, err := containeranalysis.NewGrafeasV1Beta1Client(ctx)
@@ -103,6 +105,8 @@ type Results struct {
 	Moderate90Days int
 }
 
+// CountVulns consumes an OccurrenceIterator where it logs and counts the number of vulnerabilities
+// It will add the counts to a running total
 func CountVulns(running *Results, occs *containeranalysis.OccurrenceIterator) error {
 	if running == nil {
 		return fmt.Errorf("results input was nil")

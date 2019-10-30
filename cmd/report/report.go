@@ -27,7 +27,7 @@ var (
 
 func do() error {
 	if *project == "my-project-name" {
-		return fmt.Errorf("You must set project, smi_url, smi_agent, smi_sub_service, smi_auth arguments")
+		return fmt.Errorf("you must set project, smi_url, smi_agent, smi_sub_service, smi_auth arguments")
 	}
 
 	lconf := zap.NewProductionConfig()

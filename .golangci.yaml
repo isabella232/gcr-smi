@@ -38,9 +38,3 @@ linters-settings:
     disabled-checks:
       - wrapperFunc
       - unnamedResult
-
-issues:
-  exclude-rules:
-    - text: "Binds to all network interfaces"
-      linters:
-        - gosec
