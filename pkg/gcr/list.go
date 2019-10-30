@@ -98,6 +98,7 @@ func ListVulns(project, image string) (*containeranalysis.OccurrenceIterator, er
 	return res, nil
 }
 
+// Results represents a running total
 type Results struct {
 	Total          int
 	Fixable        int
