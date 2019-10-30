@@ -1,4 +1,6 @@
 # GCR SMI Reporting Tool
+[![Go Report Card](https://goreportcard.com/badge/github.com/e-conomic/gcr-smi)](https://goreportcard.com/report/github.com/e-conomic/gcr-smi)
+[![go-doc](https://godoc.org/github.com/e-conomic/gcr-smi?status.svg)](https://godoc.org/github.com/e-conomic/gcr-smi)
 
 ### Building
 
